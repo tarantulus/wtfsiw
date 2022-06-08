@@ -16,11 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-    width: 10vw;
-    height: 30vh;
-    margin: 10px;
-    display: inline-block;
-
     img{
         width: 10vw;
         height: 25vh;

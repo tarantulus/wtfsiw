@@ -1,6 +1,5 @@
 <template>
   <div :key="movie.id" v-for="movie in movies">
-    <p>{{ movie.title }}</p>
     <Card :movie="movie"></Card>
   </div>
 </template>
@@ -15,3 +14,12 @@ export default {
   components: { Card },
 };
 </script>
+
+<style scoped>
+ div{
+    width: 10vw;
+    height: 30vh;
+    margin: 10px;
+    display: inline-block;
+ }
+</style>
