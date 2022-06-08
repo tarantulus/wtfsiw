@@ -14,13 +14,10 @@ import 'firebase/compat/auth';
 export default {
   name: "SignUp",
   methods: {
-    googleSignIn: function() {        
+    googleSignIn: function() {   
+        console.log(process.env.VUE_APP_GOOGLE_API_KEY)     
       let provider = new firebase.auth.GoogleAuthProvider();
-firebase
-        .initializeApp({
-            apiKey: 'AIzaSyAaT-NzALlozGO7zMBE4JmZkBDG82mdu9E',
-            authDomain: 'wtfsiw-3af12.firebaseapp.com'
-        })
+firebase        
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
@@ -28,6 +25,7 @@ firebase
           let user = result.user;
             console.log(token) // Token
             console.log(user) // User that was authenticated
+            this.$router.push('/home');
         })
         .catch((err) => {
           console.log(err); // This will give you all the information needed to further debug any errors

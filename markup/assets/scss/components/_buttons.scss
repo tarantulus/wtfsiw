@@ -1,0 +1,17 @@
+.button {
+  background-color: $black;
+  color: $white;
+  border: 0 none;
+  font-weight: $weight-bold;
+  &:hover {
+    background-color: $purple;
+  }
+  &:focus {
+    background-color: $blue;
+  }
+}
+.button-large {
+  padding: 15px 20px;
+  font-size: $size-5;
+  margin: 0 0 15px;
+}
