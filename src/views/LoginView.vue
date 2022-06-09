@@ -27,11 +27,9 @@ firebase
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
-          let token = result.credential.accessToken;
           let user = result.user;
-            console.log(token) // Token
-            console.log(user) // User that was authenticated
-            this.$router.push('/home');
+          console.log(user);
+          this.$router.replace('/home')            
         })
         .catch((err) => {
           console.log(err); // This will give you all the information needed to further debug any errors
