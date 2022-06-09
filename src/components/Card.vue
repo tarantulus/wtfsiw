@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="movie.image" />
+    <img :src="movie.image.replace(/original/g, '200x300')" />
     <p>{{movie.title}} {{movie.year??movie.description}}</p>
   </div>
 </template>

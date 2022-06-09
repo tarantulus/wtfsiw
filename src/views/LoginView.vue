@@ -20,16 +20,13 @@ import 'firebase/compat/auth';
 export default {
   name: "SignUp",
   methods: {
-    googleSignIn: function() {   
-        console.log(process.env.VUE_APP_GOOGLE_API_KEY)     
+    googleSignIn: function() {     
       let provider = new firebase.auth.GoogleAuthProvider();
 firebase        
         .auth()
         .signInWithPopup(provider)
-        .then((result) => {
-          let user = result.user;
-          console.log(user);
-          this.$router.replace('/home')            
+        .then(() => {
+          this.$router.push({name: 'Home'})            
         })
         .catch((err) => {
           console.log(err); // This will give you all the information needed to further debug any errors

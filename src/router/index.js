@@ -29,7 +29,7 @@ if (user) {
 return false
 }
 router.beforeEach( async (to, from, next)=>{
-    if(UserIsLoggedIn()) next({name: 'Landing'})
+    if(!UserIsLoggedIn() && to.name !== 'Landing') next({name: 'Landing'})
     else next()
 }
 )
