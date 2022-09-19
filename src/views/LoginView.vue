@@ -1,37 +1,45 @@
 // @/views/SignUp.vue
 
 <template>
-  <section class="container container-thin app-container flex flex-x-center flex-column">
-      <header class="container flex flex-xy-center flex-column mb-large">
-        <h1 class="sronly">What the fuck should I watch?</h1>
-        <img src="https://via.placeholder.com/300x150?text=Logo" alt="" class="main-logo">
-        <h2>Subtitle goes here.</h2>
-      </header>
-      <section class="container flex flex-y-center flex-column">
-        <a href="#" class="button button-large full-width">Login</a>
-        <a href="#" @click="googleSignIn" class="button button-large full-width">Signup with Google</a>
-      </section>
+  <section
+    class="container container-thin app-container flex flex-x-center flex-column"
+  >
+    <header class="container flex flex-xy-center flex-column mb-large">
+      <h1 class="sronly">What the fuck should I watch?</h1>
+      <img
+        src="https://via.placeholder.com/300x150?text=Logo"
+        alt=""
+        class="main-logo"
+      />
+      <h2>Subtitle goes here.</h2>
+    </header>
+    <section class="container flex flex-y-center flex-column">
+      <a href="#" class="button button-large full-width">Login</a>
+      <a href="#" @click="googleSignIn" class="button button-large full-width"
+        >Signup with Google</a
+      >
     </section>
+  </section>
 </template>
 
 <script>
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 export default {
   name: "SignUp",
   methods: {
-    googleSignIn: function() {     
+    googleSignIn: function () {
       let provider = new firebase.auth.GoogleAuthProvider();
-firebase        
+      firebase
         .auth()
         .signInWithPopup(provider)
         .then(() => {
-          this.$router.push({name: 'Home'})            
+          this.$router.push({ name: "Home" });
         })
         .catch((err) => {
           console.log(err); // This will give you all the information needed to further debug any errors
         });
-    }
+    },
   },
 };
 </script>
@@ -143,7 +151,9 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
 }
 
 code,
@@ -193,8 +203,8 @@ img {
   max-width: 100%;
 }
 
-input[type=checkbox],
-input[type=radio] {
+input[type="checkbox"],
+input[type="radio"] {
   vertical-align: baseline;
 }
 
@@ -438,5 +448,4 @@ h6,
 }
 
 /*# sourceMappingURL=main.css.map */
-
 </style>

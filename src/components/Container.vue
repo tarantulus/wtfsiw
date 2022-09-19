@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style scoped>
- div{
-    width: 10vw;
-    height: 30vh;
-    margin: 10px;
-    display: inline-block;
- }
+div {
+  width: 10vw;
+  height: 30vh;
+  margin: 10px;
+  display: inline-block;
+}
 </style>
